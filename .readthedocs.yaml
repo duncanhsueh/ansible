@@ -16,11 +16,12 @@ sphinx:
 # Optionally build your docs in additional formats such as PDF and ePub
 formats: all
 
-# Optionally set the version of Python and requirements required to build your docs
+# Set the version of Python and requirements required to build your docs
 python:
   version: 3.12
   install:
     - requirements: requirements.txt
+
 # Specify the build environment
 build:
   os: ubuntu-20.04
