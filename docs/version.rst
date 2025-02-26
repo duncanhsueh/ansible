@@ -16,6 +16,8 @@ are expected to find the version compatibility information for each module and i
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
 | unified       | 1.2.0               | 2024/07/10     | ``ansible-galaxy collection install fortinet.fortiweb:1.2.0``       |
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
+| unified       | 1.3.0               | 2024/12/13     | ``ansible-galaxy collection install fortinet.fortiweb:1.3.0``       |
++---------------+---------------------+----------------+---------------------------------------------------------------------+
 
 **Note**: Use ``-f`` option (i.e.
 ``ansible-galaxy collection install -f fortinet.fortiweb:x.x.x``) to renew your existing local installation.

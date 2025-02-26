@@ -103,10 +103,11 @@ Parameters
                       client-side,
                       server-side,
                       both-side,</span></li>
-              <li><span class="li-head"> allow-hosts </span> allow hosts <span class="li-normal"> type:string</span></li>
-              <li><span class="li-head"> allow-list </span> allow list <span class="li-normal"> type:string</span></li>
-              <li><span class="li-head"> acceleration-policy </span> acceleration policy <span class="li-normal"> type:string</span></li>
-              <li><span class="li-head"> https-service </span> https service <span class="li-normal"> type:string</span></li>
+              <li><span class="li-head"> allow_hosts </span> allow hosts <span class="li-normal"> type:string</span></li>
+              <li><span class="li-head"> allow_list </span> allow list <span class="li-normal"> type:string</span></li>
+              <li><span class="li-head"> acceleration_policy </span> acceleration policy <span class="li-normal"> type:string</span></li>
+              <li><span class="li-head"> https_service </span> https service <span class="li-normal"> type:string</span></li>
+              <li><span class="li-head"> http3_service </span> http3 service <span class="li-normal"> type:string</span></li>
               <li><span class="li-head"> multi-certificate </span> enable multi certificate <span class="li-normal"> type:string choice:
                       enable,
                       disable,</span></li>
@@ -250,7 +251,10 @@ Parameters
               <li><span class="li-head"> web-cache </span> WEB cache mode: enable/disable <span class="li-normal"> type:string choice:
                       enable,
                       disable,</span></li>
-              <li><span class="li-head"> http-to-https </span> Redirect HTTP to HTTPs: enable/disable <span class="li-normal"> type:string choice:
+              <li><span class="li-head"> http-to-https </span> Redirect naked domain request to "www" domain requests: enable/disable <span class="li-normal"> type:string choice:
+                      enable,
+                      disable,</span></li>
+              <li><span class="li-head"> redirect_naked_domain </span> Redirect HTTP to HTTPs: enable/disable <span class="li-normal"> type:string choice:
                       enable,
                       disable,</span></li>
               <li><span class="li-head"> sessioncookie-enforce </span> Enforce session cookie per transaction <span class="li-normal"> type:string choice:
