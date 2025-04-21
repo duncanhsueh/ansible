@@ -16,7 +16,9 @@ are expected to find the version compatibility information for each module and i
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
 | unified       | 1.2.0               | 2024/07/10     | ``ansible-galaxy collection install fortinet.fortiweb:1.2.0``       |
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
-| unified       | 1.3.0               | 2024/12/13     | ``ansible-galaxy collection install fortinet.fortiweb:1.3.0``       |
+| unified       | 1.3.0               | 2025/03/06     | ``ansible-galaxy collection install fortinet.fortiweb:1.3.0``       |
++---------------+---------------------+----------------+---------------------------------------------------------------------+
+| unified       | 1.3.1               | 2025/05/01     | ``ansible-galaxy collection install fortinet.fortiweb:1.3.1``       |
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
 
 **Note**: Use ``-f`` option (i.e.

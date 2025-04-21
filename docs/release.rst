@@ -4,6 +4,22 @@ Release Notes
 
 |
 
+Release Galaxy 1.3.1
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiWeb Galaxy 1.3.1 is based on 1.3.0.
+
+Features
+^^^^^^^^^^^^^^^
+- Add Application Delivery Modules(Site Publish, URL Rewriting, Waiting Room).
+- Add Advanced Protection Modules(Data Loss Prevention).
+- Add Bot Mitigation Modules(Known Bots, ML Based Bot Detection).
+- Add API Protection Modules(JSON Protection, ML Based API Protection).
+- FortiWeb version: v7.2.x, v7.4.x and v7.6.x.
+
 Release Galaxy 1.3.0
 --------------------
 
@@ -15,6 +31,9 @@ FortiWeb Galaxy 1.3.0 is based on 1.2.0.
 Features
 ^^^^^^^^^^^^^^^
 - Add HTTP Content Routing modules.
+- Add support of HTTP/3 service and redirect-naked-domain configuration in Server Policy module
+- Add Advanced Protection Modules(HTTP Header Security, Custom Policy, and CSRF Protection).
+- Add 'fwebos_json_generic.py', a module can send HTTP requests to the API of all FortiWeb configuration services
 - FortiWeb version: v7.2.x, v7.4.x and v7.6.x.
 
 Release Galaxy 1.2.0
