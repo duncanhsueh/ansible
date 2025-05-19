@@ -18,7 +18,12 @@ Features
 - Add Advanced Protection Modules(Data Loss Prevention).
 - Add Bot Mitigation Modules(Known Bots, ML Based Bot Detection).
 - Add API Protection Modules(JSON Protection, ML Based API Protection).
+- Add error handling when checking VDOM status.
 - FortiWeb version: v7.2.x, v7.4.x and v7.6.x.
+
+Notice
+^^^^^^^^^^^^^^^
+- Please run 'ansible-galaxy collection install fortinet.fortiweb' again to update libraries after upgrade to 1.3.1.
 
 Release Galaxy 1.3.0
 --------------------

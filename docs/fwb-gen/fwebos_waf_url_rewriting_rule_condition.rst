@@ -36,10 +36,10 @@ FortiWeb Version Compatibility
  <table>
  <tr>
  <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.x </code></td>
+ <td><code class="docutils literal notranslate">v7.2.x </code></td>
+ <td><code class="docutils literal notranslate">v7.4.x </code></td>
+ <td><code class="docutils literal notranslate">v7.6.x </code></td>
  </tr>
  <tr>
  <td>fwebos_waf_url_rewriting_rule_condition.py</td>
@@ -64,31 +64,23 @@ Parameters
   <li><span class="li-head">body</span> Possible parameters to go in the body for the request <span class="li-required">required: True </li>
         <ul class="ul-self">
               <li><span class="li-head"> name </span> The name of rewriting rule.<span class="li-normal"> type:string 
-                    maxLength:63</span></li>     
+                    maxLength:63</span></li>  
+              <li><span class="li-head"> id </span> The index of rewriting rule condition.<span class="li-normal"> type:integer</span></li>     
               <li><span class="li-head"> object </span> Select which part of the HTTP request will be tested for a match.<span class="li-normal"> type:string choice:
                       http-host,
                       http-url,
-                      http-refer</span></li>  
+                      http-location</span></li>  
               <li><span class="li-head"> reg_exp </span> A regular Expression that defines either all matching or all non-matching objects..<span class="li-normal"> type:string 
                     maxLength:255</span></li>   
               <li><span class="li-head"> protocol_filter </span> Protocol Filter.<span class="li-normal"> type:string choice:
                       enable,
-                      disable,</span></li>
-              <li><span class="li-head"> is_referer_essential </span> If you selected 'http-refer' from 'object', also configure if no Referer field in HTTP header, whether to meet or not meet this condition .<span class="li-normal"> type:string choice:
-                      "yes" (Do not meet the condition),
-                      "no" (Meet this condition)</span></li>    
-              <li><span class="li-head"> protocol_filter </span> Protocol Filter.<span class="li-normal"> type:string choice:
-                      enable,
-                      disable,</span></li>   
-              <li><span class="li-head"> protocol </span> Select which protocol will match this condition, either HTTP or HTTPS..<span class="li-normal"> type:string choice:
+                      disable,</span></li>  
+              <li><span class="li-head"> http_protocol </span> Select which protocol will match this condition, either HTTP or HTTPS..<span class="li-normal"> type:string choice:
                       http,
                       https,</span></li> 
               <li><span class="li-head"> reverse_match </span> Indicate how to use Regular Expression when determining whether or not this URL rewriting condition is met.<span class="li-normal"> type:string choice:
                       "yes" (Object does not match the regular expression),
-                      "no" (Object matches the regular expressionn)</span></li>           
-              <li><span class="li-head"> content_type_filter</span>Enable if you want to match this condition only for specific HTTP content types.<span class="li-normal"> type:string choice:
-                      enable,
-                      disable,</span></li>                                      
+                      "no" (Object matches the regular expressionn)</span></li>                                           
         <li><span class="li-head">mkey</span> If present, objects will be filtered on property with this name <span class="li-normal"> type:string </span></li><li><span class="li-head">vdom</span> Specify the Virtual Domain(s) from which results are returned or changes are applied to. If this parameter is not provided, the management VDOM will be used. If the admin does not have access to the VDOM, a permission error will be returned. The URL parameter is one of: vdom=root (Single VDOM) vdom=vdom1,vdom2 (Multiple VDOMs) vdom=* (All VDOMs)   <span class="li-normal"> type:array </span></li><li><span class="li-head">clone_mkey</span> Use *clone_mkey* to specify the ID for the new resource to be cloned.  If *clone_mkey* is set, *mkey* must be provided which is cloned from.   <span class="li-normal"> type:string </span></li>
   </ul>
 
@@ -96,7 +88,7 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
-   - name:
+ - name:
    hosts: all
    vars:
    connection: httpapi

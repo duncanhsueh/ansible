@@ -10,17 +10,17 @@ do
 	echo "" >> $file
 	echo ".. hint::" >> $file
 	echo "	If you notice any issues in this documentation, you can create a pull request to improve it." >> $file
-#sed -i '41 i \ <td><code class="docutils literal notranslate">v7.0.1 </code></td>'  "$file"
-#	sed -i '42 i \ <td><code class="docutils literal notranslate">v7.0.2 </code></td>'   "$file"
-#	sed -i '43 i \ <td><code class="docutils literal notranslate">v7.1.0 </code></td>'  "$file"
+#sed -i '41 i \ <td><code class="docutils literal notranslate">v7.2.x </code></td>'  "$file"
+#	sed -i '42 i \ <td><code class="docutils literal notranslate">v7.4.x </code></td>'   "$file"
+#	sed -i '43 i \ <td><code class="docutils literal notranslate">v7.6.x </code></td>'  "$file"
 #	sed -i '47 i \ <td>yes</td>' "$file"
 #	sed -i '47 i \ <td>yes</td>'  "$file"
 #	sed -i '47 i \ <td>yes</td>'  "$file"
 done
 
-#sed -i '41 i \ <td><code class="docutils literal notranslate">v7.0.1 </code></td>' $1 
-#sed -i '42 i \ <td><code class="docutils literal notranslate">v7.0.2 </code></td>' $1  
-#sed -i '43 i \ <td><code class="docutils literal notranslate">v7.1.0 </code></td>' $1 
+#sed -i '41 i \ <td><code class="docutils literal notranslate">v7.2.x </code></td>' $1 
+#sed -i '42 i \ <td><code class="docutils literal notranslate">v7.4.x </code></td>' $1  
+#sed -i '43 i \ <td><code class="docutils literal notranslate">v7.6.x </code></td>' $1 
 #sed -i '47 i \ <td>yes</td>' $1 
 #sed -i '47 i \ <td>yes</td>' $1 
 #sed -i '47 i \ <td>yes</td>' $1 

@@ -36,10 +36,10 @@ FortiWeb Version Compatibility
  <table>
  <tr>
  <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.x </code></td>
+ <td><code class="docutils literal notranslate">v7.2.x </code></td>
+ <td><code class="docutils literal notranslate">v7.4.x </code></td>
+ <td><code class="docutils literal notranslate">v7.6.x </code></td>
  </tr>
  <tr>
  <td>fwebos_waf_known_bots.py</td>
@@ -343,12 +343,12 @@ Examples
 .. code-block:: yaml+jinja
 
 ---
-- name:
-  hosts: all
-  vars:
-  connection: httpapi
-  gather_facts: false
-  tasks:
+ - name:
+   hosts: all
+   vars:
+   connection: httpapi
+   gather_facts: false
+   tasks:
     - name: add a known bot profile
       fwebos_waf_known_bots:
         action: add 

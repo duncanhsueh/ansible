@@ -1,10 +1,10 @@
-:source: fwebos_waf_http_header_security_policy.py
+:source: fwebos_waf_http_header_security_policy_rule.py
 
 :orphan:
 
-.. fwebos_waf_http_header_security_policy.py:
+.. fwebos_waf_http_header_security_policy_rule.py:
 
-fwebos_waf_http_header_security_policy.py -- Config FortiWeb HTTP Header Security Policy
+fwebos_waf_http_header_security_policy_rule.py -- Config FortiWeb HTTP Header Security Policy Rules
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.0.1
@@ -16,7 +16,7 @@ fwebos_waf_http_header_security_policy.py -- Config FortiWeb HTTP Header Securit
 
 Synopsis
 --------
-Config FortiWeb HTTP Header Security Policy
+Config FortiWeb HTTP Header Security Policy Rules
 
 
 Requirements
@@ -36,10 +36,10 @@ FortiWeb Version Compatibility
  <table>
  <tr>
  <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.x </code></td>
+ <td><code class="docutils literal notranslate">v7.2.x </code></td>
+ <td><code class="docutils literal notranslate">v7.4.x </code></td>
+ <td><code class="docutils literal notranslate">v7.6.x </code></td>
  </tr>
  <tr>
  <td>fwebos_waf_http_header_security_policy.py</td>
@@ -110,7 +110,7 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
-   - name:
+ - name:
    hosts: all
    vars:
    connection: httpapi

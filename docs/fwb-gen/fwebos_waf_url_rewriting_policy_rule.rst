@@ -36,10 +36,10 @@ FortiWeb Version Compatibility
  <table>
  <tr>
  <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.x </code></td>
+ <td><code class="docutils literal notranslate">v7.2.x </code></td>
+ <td><code class="docutils literal notranslate">v7.4.x </code></td>
+ <td><code class="docutils literal notranslate">v7.6.x </code></td>
  </tr>
  <tr>
  <td>fwebos_waf_url_rewriting_policy_rule.py</td>
@@ -79,37 +79,37 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
-- name:
-  hosts: all
-  vars:
-  connection: httpapi
-  gather_facts: false
-  tasks:
-    - name: add a URL rewriting rule in a policy
-      fwebos_waf_url_rewriting_policy_rule_rule:
-       action: add 
-       name: rp1
-       url_rewrite_rule_name: test_rule1
-       continue_execution: enable
+  - name:
+    hosts: all
+    vars:
+    connection: httpapi
+    gather_facts: false
+    tasks:
+      - name: add a URL rewriting rule in a policy
+        fwebos_waf_url_rewriting_policy_rule_rule:
+        action: add 
+        name: rp1
+        url_rewrite_rule_name: test_rule1
+        continue_execution: enable
 
-    - name: get a URL rewriting rule in a policy
-      fwebos_waf_url_rewriting_policy_rule_rule:
-       action: get 
-       name: rp1
-       id: 1
+      - name: get a URL rewriting rule in a policy
+        fwebos_waf_url_rewriting_policy_rule_rule:
+        action: get 
+        name: rp1
+        id: 1
 
-    - name: edit a URL rewriting rule in a policy
-      fwebos_waf_url_rewriting_policy_rule_rule:
-       action: edit 
-       name: rp1
-       id: 1
-       continue_execution: disable
+      - name: edit a URL rewriting rule in a policy
+        fwebos_waf_url_rewriting_policy_rule_rule:
+        action: edit 
+        name: rp1
+        id: 1
+        continue_execution: disable
 
-    - name: delete a URL rewriting policy
-      fwebos_waf_url_rewriting_policy_rule_rule:
-       action: delete 
-       name: rp1
-       id: 1
+      - name: delete a URL rewriting policy
+        fwebos_waf_url_rewriting_policy_rule_rule:
+        action: delete 
+        name: rp1
+        id: 1
 
 Return Values
 -------------

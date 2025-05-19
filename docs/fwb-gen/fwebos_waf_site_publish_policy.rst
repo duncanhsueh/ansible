@@ -1,10 +1,10 @@
-:source: fwebos_waf_site_publish_policy.rst.py
+:source: fwebos_waf_site_publish_policy.py
 
 :orphan:
 
-.. fwebos_waf_site_publish_policy.rst.py:
+.. fwebos_waf_site_publish_policy.py:
 
-fwebos_waf_site_publish_policy.rst.py -- Config FortiWeb Published Site Policy
+fwebos_waf_site_publish_policy.py -- Config FortiWeb Published Site Policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.0.1
@@ -36,13 +36,13 @@ FortiWeb Version Compatibility
  <table>
  <tr>
  <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.x </code></td>
+ <td><code class="docutils literal notranslate">v7.2.x </code></td>
+ <td><code class="docutils literal notranslate">v7.4.x </code></td>
+ <td><code class="docutils literal notranslate">v7.6.x </code></td>
  </tr>
  <tr>
- <td>fwebos_waf_site_publish_policy.rst.py</td>
+ <td>fwebos_waf_site_publish_policy.py</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -118,43 +118,43 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
-   - name:
+ - name:
    hosts: all
    vars:
    connection: httpapi
    gather_facts: false
    tasks:
     - name: add a site_publish policy
-      fwebos_waf_site_publish_policy.rst:
-       action: add 
-       name: pp1
-       account_block_period: 600  
-       account_lockout: enable 
-       security_action: alert_deny
-       credential_stuffing_online_query: enable
-       credential_stuffing_protection: enable   
-       limit_users: enable
-       max_login_failures: 5  
-       maximum_users: 1  
-       session_idle_timeout: 30  
-       severity: Medium 
-       trigger: tp1
-       within: 3  
+      fwebos_waf_site_publish_policy:
+        action: add 
+        name: pp1
+        account_block_period: 600  
+        account_lockout: enable 
+        security_action: alert_deny
+        credential_stuffing_online_query: enable
+        credential_stuffing_protection: enable   
+        limit_users: enable
+        max_login_failures: 5  
+        maximum_users: 1  
+        session_idle_timeout: 30  
+        severity: Medium 
+        trigger: tp1
+        within: 3  
 
     - name: get a site_publish policy
-      fwebos_waf_site_publish_policy.rst:
-       action: get 
-       name: pp1
+      fwebos_waf_site_publish_policy:
+        action: get 
+        name: pp1
 
     - name: edit a dlp dictionary
-      fwebos_waf_site_publish_policy.rst:
-       action: edit 
-       name: pp1
-       account_lockout: disable 
-       security_action: alert
+      fwebos_waf_site_publish_policy:
+        action: edit 
+        name: pp1
+        account_lockout: disable 
+        security_action: alert
 
     - name: delete a site_publish
-      fwebos_waf_site_publish_policy.rst:
+      fwebos_waf_site_publish_policy:
         action: delete 
         name: pp1  
 

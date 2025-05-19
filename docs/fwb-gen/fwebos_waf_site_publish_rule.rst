@@ -1,10 +1,10 @@
-:source: fwebos_waf_ap_site_publish_policy.py
+:source: fwebos_waf_site_publish_rule.py
 
 :orphan:
 
-.. fwebos_waf_site_publish_rule.rst.py:
+.. fwebos_waf_site_publish_rule.py:
 
-fwebos_waf_site_publish_rule.rst.py -- Config FortiWeb Published Site Policy
+fwebos_waf_site_publish_rule.py -- Config FortiWeb Published Site Policy
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.0.1
@@ -36,13 +36,13 @@ FortiWeb Version Compatibility
  <table>
  <tr>
  <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.x </code></td>
+ <td><code class="docutils literal notranslate">v7.2.x </code></td>
+ <td><code class="docutils literal notranslate">v7.4.x </code></td>
+ <td><code class="docutils literal notranslate">v7.6.x </code></td>
  </tr>
  <tr>
- <td>fwebos_waf_site_publish_rule.rst.py</td>
+ <td>fwebos_waf_site_publish_rule.py</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -140,7 +140,7 @@ Parameters
                       disable</span></li> 
               <li><span class="li-head"> sso_domain </span> SSO Domain. Only available when 'sso_support' is enabled. <span class="li-normal"> type:string 
                     maxLength:255 </span></li> 
-              <li><span class="li-head"> auth_server-pool</span> Authentication Server Pool. Only available when 'client_auth_method' is 'html-form-auth'. <span class="li-normal"> type:string 
+              <li><span class="li-head"> auth_server_pool</span> Authentication Server Pool. Only available when 'client_auth_method' is 'html-form-auth'. <span class="li-normal"> type:string 
                     maxLength:255 </span></li> 
               <li><span class="li-head"> auth_delegation </span> Authentication Delegation.<span class="li-normal"> type:string choice:
                       no-delegation,
@@ -151,9 +151,9 @@ Parameters
                       radius-constrained-delegation</span></li>
               <li><span class="li-head"> form_based_delegation</span> Form based delegation. Only available when 'client_auth_method' is 'html-form-auth' and 'auth_delegation' is 'form-based-delegation'. <span class="li-normal"> type:string 
                     maxLength:255 </span></li> 
-              <li><span class="li-head"> ntlm-server</span> NTLM Server. Only available when 'client_auth_method' is 'ntlm-auth'. <span class="li-normal"> type:string 
+              <li><span class="li-head"> ntlm_server</span> NTLM Server. Only available when 'client_auth_method' is 'ntlm-auth'. <span class="li-normal"> type:string 
                     maxLength:255 </span></li> 
-              <li><span class="li-head"> alert-type </span> Select Alert Type.<span class="li-normal"> type:string choice:
+              <li><span class="li-head"> alert_type </span> Select Alert Type.<span class="li-normal"> type:string choice:
                       fail (Failed Only),
                       success (successful Only),
                       none,
@@ -165,25 +165,25 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
-   - name:
+ - name:
    hosts: all
    vars:
    connection: httpapi
    gather_facts: false
    tasks:
     - name: add a site_publish rule
-      fwebos_waf_site_publish_rule.rst:
+      fwebos_waf_site_publish_rule:
         action: add
         name: spr_test
         published_site: testsite.com
-        req_type: plain
+        published_site_type: plain
         status: enable
         cookieless: disable
         cookieless_cache: 3600
         client_auth_method: html-form-auth
-        auth_server_pool: sp1
+        auth_server_pool: asp1
         ntlm_server: 
-        auth_delegation: http-basic
+        auth_delegation: no-delegation
         form_based_delegation: 
         sso_support: enable
         sso_domain: domin1
@@ -201,24 +201,27 @@ Examples
         cache_tgs_ticket: enable
 
     - name: get a site_publish rule
-      fwebos_waf_site_publish_rule.rst:
+      fwebos_waf_site_publish_rule:
         action: get
         name: spr_test
 
 
     - name: edit a site_publish rule
-      fwebos_waf_site_publish_rule.rst:
+      fwebos_waf_site_publish_rule:
         action: edit
         name: spr_test
         published_site: testsite1.com
-        req_type: plain
+        published_site_type: plain
         status: enable
         client_auth_method: http-auth
-        auth_server_pool: sp1
-        auth_delegation: http-basic
 
     - name: delete a site_publish rule
-      fwebos_waf_site_publish_rule.rst:
+      fwebos_waf_site_publish_rule:
+        action: delete
+        name: spr_test
+
+    - name: delete a site_publish rule again
+      fwebos_waf_site_publish_rule:
         action: delete
         name: spr_test
 

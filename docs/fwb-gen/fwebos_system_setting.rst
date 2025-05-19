@@ -1,10 +1,10 @@
-:source: fwebos_waf_custom_protection_rule_condition.py
+:source: fwebos_system_setting.py
 
 :orphan:
 
-.. fwebos_waf_custom_protection_rule_condition.py:
+.. fwebos_system_setting.py:
 
-fwebos_waf_custom_protection_rule_condition.py -- Config FortiWeb Custom Policy Custom Rule conditions
+fwebos_system_setting.py -- Config System Administrators Settings in FortiWeb
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.0.1
@@ -16,7 +16,7 @@ fwebos_waf_custom_protection_rule_condition.py -- Config FortiWeb Custom Policy 
 
 Synopsis
 --------
-Config FortiWeb Custom Policy Custom Rule conditions
+Config System Administrators Settings in FortiWeb
 
 
 Requirements
@@ -42,7 +42,7 @@ FortiWeb Version Compatibility
  <td><code class="docutils literal notranslate">v7.6.x </code></td>
  </tr>
  <tr>
- <td>fwebos_waf_custom_protection_rule_condition.py</td>
+ <td>fwebos_system_setting.py</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -63,32 +63,17 @@ Parameters
   <ul>
   <li><span class="li-head">body</span> Possible parameters to go in the body for the request <span class="li-required">required: True </li>
         <ul class="ul-self">
-              <li><span class="li-head"> table_name </span> members <span class="li-normal"> type:str</span></li>
-              <li><span class="li-head"> name </span> id <span class="li-normal"> type:str</span></li>
-              <li><span class="li-head"> operator </span> operator <span class="li-normal"> type:str</span></li>
-              <li><span class="li-head"> threshold </span> threshold for match targets, range 0-16777216 <span class="li-normal"> type:str
-                    default:0</span></li>
-              <li><span class="li-head"> case_sensitive </span> case sensitive <span class="li-normal"> type:str
-                    default:disable</span></li>
-              <li><span class="li-head"> expression </span> expression <span class="li-normal"> type:str</span></li>
-              <li><span class="li-head"> request_target </span> match targets in request direction <span class="li-normal"> type:str choice:
-                      REQUEST_FILENAME,
-                      REQUEST_URI,
-                      REQUEST_HEADERS_NAMES,
-                      REQUEST_HEADERS,
-                      REQUEST_COOKIES_NAMES,
-                      REQUEST_COOKIES,
-                      ARGS_NAMES,
-                      ARGS_VALUE,
-                      REQUEST_RAW_URI,
-                      REQUEST_BODY,
-                      CONTENT_LENGTH,
-                      HEADER_LENGTH,
-                      BODY_LENGTH,
-                      COOKIE_NUMBER,
-                      ARGS_NUMBER,
-                      HTTP_METHOD,
-                      REQUEST_RAW_BODY,</span></li>
+              <li><span class="li-head"> hostname </span> The Host Name <span class="li-normal">type:string
+                    maxLength:63</span></li>
+              <li><span class="li-head"> idle_timeout </span>Type the number of minutes that a web UI connection can be idle before the administrator must log in again. <span class="li-normal">  type:integer
+                    maximum:480
+                    minimum:1</span></li>
+              <li><span class="li-head"> config_sync </span> Enable Config sync then type the TCP port number on which the FortiWeb appliance will listen for configuration synchronization requests from the peer/remote FortiWeb appliance.  <span class="li-normal"> type:string</span></li>
+              <li><span class="li-head"> intermediate_ca_group </span>Type the HTTPS Server Intermediate CA Group <span class="li-normal"> type:string</span></li>
+              <li><span class="li-head"> http_port </span>Type the TCP port number on which the FortiWeb appliance will listen for HTTP administrative access. <span class="li-normal"> type:integer</span></li>
+              <li><span class="li-head"> https_port </span>Type the TCP port number on which the FortiWeb appliance will listen for HTTPS administrative access. <span class="li-normal"> type:integer</span></li>              
+              <li><span class="li-head"> https_server_cert </span>Type the certificate that FortiWeb uses for secure connections to its Web UI.<span class="li-normal"> type:integer</span></li>              
+              <li><span class="li-head"> sys_global_language </span>Type the language to use when displaying the web UI.<span class="li-normal"> type:integer</span></li>                  
         <li><span class="li-head">mkey</span> If present, objects will be filtered on property with this name  <span class="li-normal"> type:string </span></li><li><span class="li-head">vdom</span> Specify the Virtual Domain(s) from which results are returned or changes are applied to. If this parameter is not provided, the management VDOM will be used. If the admin does not have access to the VDOM, a permission error will be returned. The URL parameter is one of: vdom=root (Single VDOM) vdom=vdom1,vdom2 (Multiple VDOMs) vdom=* (All VDOMs)   <span class="li-normal"> type:array </span></li><li><span class="li-head">clone_mkey</span> Use *clone_mkey* to specify the ID for the new resource to be cloned.  If *clone_mkey* is set, *mkey* must be provided which is cloned from.   <span class="li-normal"> type:string </span></li>
   </ul>
 
@@ -96,20 +81,16 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
- - name:
-   hosts: all
-   vars:
-   connection: httpapi
-   gather_facts: false
-   tasks:
-     - name: Create
-       fwebos_waf_custom_protection_rule_condition:
-        action: add
-        table_name: test4
-        operator: RE
-        expression: test_exp
-        request_target: "REQUEST_RAW_BODY"
-        vdom: root
+---
+- name:
+  hosts: all
+  connection: httpapi
+  gather_facts: false
+  tasks:
+    - name: Manage system setting
+      fwebos_system_setting:
+       idle_timeout: 468
+       hostname: testhost1
  
 
 Return Values

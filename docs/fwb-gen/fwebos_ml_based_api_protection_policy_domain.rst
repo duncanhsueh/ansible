@@ -1,10 +1,10 @@
-:source: fwebos_ml_based_api_protection_policy.py
+:source: fwebos_ml_based_api_protection_policy_domain.py
 
 :orphan:
 
-.. fwebos_ml_based_api_protection_policy.py:
+.. fwebos_ml_based_api_protection_policy_domain.py:
 
-fwebos_ml_based_api_protection_policy.py -- Config FortiWeb ML Based API Protection Policy
+fwebos_ml_based_api_protection_policy_domain.py -- Config FortiWeb ML Based API Protection Policy Domain
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.0.1
@@ -16,7 +16,7 @@ fwebos_ml_based_api_protection_policy.py -- Config FortiWeb ML Based API Protect
 
 Synopsis
 --------
-Config FortiWeb ML Based API Protection Policy
+Config FortiWeb ML Based API Protection Policy Domain
 
 
 Requirements
@@ -36,10 +36,10 @@ FortiWeb Version Compatibility
  <table>
  <tr>
  <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.x </code></td>
+ <td><code class="docutils literal notranslate">v7.2.x </code></td>
+ <td><code class="docutils literal notranslate">v7.4.x </code></td>
+ <td><code class="docutils literal notranslate">v7.6.x </code></td>
  </tr>
  <tr>
  <td>fwebos_ml_based_api_protection_policy.py</td>
@@ -78,7 +78,7 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
-   - name:
+ - name:
    hosts: all
    vars:
    connection: httpapi
