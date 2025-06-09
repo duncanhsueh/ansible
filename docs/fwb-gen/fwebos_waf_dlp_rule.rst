@@ -116,13 +116,12 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
----
-- name:
-  hosts: all
-  vars:
-  connection: httpapi
-  gather_facts: false
-  tasks:
+ - name:
+   hosts: all
+   vars:
+   connection: httpapi
+   gather_facts: false
+   tasks:
     - name: add a policy of http payload type 
       fwebos_waf_dlp_rule:
        action: add 
@@ -173,9 +172,6 @@ Examples
       fwebos_waf_dlp_rule:
        action: delete 
        name: dlp4
-
-
-
 
 Return Values
 -------------

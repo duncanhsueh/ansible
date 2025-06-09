@@ -80,44 +80,44 @@ Examples
    gather_facts: false
    tasks:
     - name: add a json schema group member
-      fwebos_waf_json_schema group_member:
+      fwebos_waf_json_schema_group_member:
         action: add 
         name: json_schema_group_1
         member_name: js1
 
     - name: add another json schema group
-      fwebos_waf_json_schema group_member:
+      fwebos_waf_json_schema_group_member:
         action: add 
         name: json_schema_group_1
         member_name: js2
 
     - name: edit a json schema group member
-      fwebos_waf_json_schema group_member:
+      fwebos_waf_json_schema_group_member:
         action: edit 
         name: json_schema_group_1
         id: 2
         member_name: js3
 
     - name: get all json schema group member
-      fwebos_waf_json_schema group_member:
+      fwebos_waf_json_schema_group_member:
         action: get 
         name: json_schema_group_1
 
     - name: get a json schema group member
-      fwebos_waf_json_schema group_member:
+      fwebos_waf_json_schema_group_member:
         action: get 
         name: json_schema_group_1
         id: 1
 
     - name: edit a json schema group member
-      fwebos_waf_json_schema group_member:
+      fwebos_waf_json_schema_group_member:
         action: edit 
         name: json_schema_group_1
         id: 2
         member_name: aaa
 
     - name: delete a json schema group member
-      fwebos_waf_json_schema group_member:
+      fwebos_waf_json_schema_group_member:
         action: delete 
         name: json_schema_group_1
         id: 1
