@@ -342,7 +342,6 @@ Examples
 --------
 .. code-block:: yaml+jinja
 
----
  - name:
    hosts: all
    vars:
@@ -356,20 +355,18 @@ Examples
         dos_status: enable
         dos_action: alert_deny
         dos_block_period: 600
-        dos_severity: High
+        dos_severity: Low
         dos_threat_weight: critical
-        dos_trigger: 
-
 
     - name: edit a known bot profile
       fwebos_waf_known_bots:
-        action: edit 
+        action: edit
         name: Bot1
         feed_fetcher_status: enable
         feed_fetcher_action: redirect
         feed_fetcher_severity: Info
-        feed_fetcher_threat_weight: moderate #substantial 
-
+        feed_fetcher_threat_weight: moderate #substantial
+        
     - name: get a known bot profile
       fwebos_waf_known_bots:
         action: get
@@ -379,8 +376,6 @@ Examples
       fwebos_waf_known_bots:
         action: delete
         name: Bot1
-
-
 
 Return Values
 -------------

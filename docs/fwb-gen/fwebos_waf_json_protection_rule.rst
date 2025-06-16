@@ -141,7 +141,7 @@ Examples
         host_status: enable
         host: myhost2
         request_type: plain
-        request_file: /folder1/f2
+        request_url: /folder1/f2
         security_action: alert
         block_period: 600
         severity: Low

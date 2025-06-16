@@ -98,7 +98,7 @@ Examples
       fwebos_waf_url_rewriting_rule_condition:
        action: add 
        name: aa2
-       object: http-refer
+       object: http-location
        is_referer_essential: "yes"
        reg_exp: tttttt
        reverse_match: "no"
