@@ -5,7 +5,6 @@
 .. fwebos_bot_detection_ip.py:
 
 fwebos_bot_detection_ip.py -- Config FortiWeb Bot Detection Limit Sample Collections From IPs
-
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.0.1
@@ -84,31 +83,31 @@ Examples
    gather_facts: false
    tasks:
     - name: add a bot detection policy ip
-      fwebos_bot_detection_ip_ip:
+      fwebos_bot_detection_ip:
         action: add 
         policy_id: 2
         ip: 10.11.3.4
 
     - name: get all bot detection policy ip
-      fwebos_bot_detection_ip_ip:
+      fwebos_bot_detection_ip:
         action: get 
         policy_id: 2
 
     - name: get a bot detection policy ip
-      fwebos_bot_detection_ip_ip:
+      fwebos_bot_detection_ip:
         action: get 
         policy_id: 2
         id: 100
 
     - name: edit a bot detection policy ip
-      fwebos_bot_detection_ip_ip:
+      fwebos_bot_detection_ip:
         action: edit 
         policy_id: 2
         id: 1
         ip: 192.13.3.41
 
     - name: delete a bot detection policy
-      fwebos_bot_detection_ip_ip:
+      fwebos_bot_detection_ip:
         action: delete 
         policy_id: 2
         id: 1
