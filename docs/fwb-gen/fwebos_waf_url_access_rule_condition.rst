@@ -64,7 +64,7 @@ Parameters
   <li><span class="li-head">body</span> Possible parameters to go in the body for the request <span class="li-required">required: True </li>
         <ul class="ul-self">
               <li><span class="li-head"> table_name </span> members <span class="li-normal"> type:str</span></li>
-              <li><span class="li-head"> name </span> id <span class="li-normal"> type:str</span></li>
+              <li><span class="li-head"> id </span> id <span class="li-normal"> type:str</span></li>
               <li><span class="li-head"> url_type </span> simple string or regular expression <span class="li-normal"> type:str</span></li>
               <li><span class="li-head"> reg_exp </span> regular express <span class="li-normal"> type:str</span></li>
               <li><span class="li-head"> reverse_match </span> reverse match <span class="li-normal"> type:str</span></li>

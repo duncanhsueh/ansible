@@ -64,7 +64,7 @@ Parameters
   <li><span class="li-head">body</span> Possible parameters to go in the body for the request <span class="li-required">required: True </li>
         <ul class="ul-self">
               <li><span class="li-head"> table_name </span> members <span class="li-normal"> type:str</span></li>
-              <li><span class="li-head"> name </span> id <span class="li-normal"> type:str</span></li>
+              <li><span class="li-head"> id </span> id <span class="li-normal"> type:str</span></li>
               <li><span class="li-head"> url_access_rule_name </span> url access rule name <span class="li-normal"> type:str</span></li>
         <li><span class="li-head">mkey</span> If present, objects will be filtered on property with this name  <span class="li-normal"> type:string </span></li><li><span class="li-head">vdom</span> Specify the Virtual Domain(s) from which results are returned or changes are applied to. If this parameter is not provided, the management VDOM will be used. If the admin does not have access to the VDOM, a permission error will be returned. The URL parameter is one of: vdom=root (Single VDOM) vdom=vdom1,vdom2 (Multiple VDOMs) vdom=* (All VDOMs)   <span class="li-normal"> type:array </span></li><li><span class="li-head">clone_mkey</span> Use *clone_mkey* to specify the ID for the new resource to be cloned.  If *clone_mkey* is set, *mkey* must be provided which is cloned from.   <span class="li-normal"> type:string </span></li>
   </ul>

@@ -4,6 +4,23 @@ Release Notes
 
 |
 
+Release Galaxy 1.3.2
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiWeb Galaxy 1.3.2 is based on 1.3.2.
+
+Features
+^^^^^^^^^^^^^^^
+- Add Ansible check mode support.
+- Add Ansible diff mode support.
+
+Notice
+^^^^^^^^^^^^^^^
+- Please run 'ansible-galaxy collection install fortinet.fortiweb' again to update libraries after upgrade to 1.3.2.
+
 Release Galaxy 1.3.1
 --------------------
 

@@ -63,8 +63,8 @@ Parameters
   <ul>
   <li><span class="li-head">body</span> Possible parameters to go in the body for the request <span class="li-required">required: True </li>
         <ul class="ul-self">
-              <li><span class="li-head"> table_name </span> members <span class="li-normal"> type:str</span></li>
-              <li><span class="li-head"> name </span> id <span class="li-normal"> type:str</span></li>
+              <li><span class="li-head"> name </span> name of IP list <span class="li-normal"> type:str</span></li>
+              <li><span class="li-head"> id </span> id <span class="li-normal"> type:str</span></li>
               <li><span class="li-head"> member_type </span> type <span class="li-normal"> type:str choice:
                       trust-ip,
                       black-ip,
@@ -83,13 +83,31 @@ Examples
    connection: httpapi
    gather_facts: false
    tasks:
-     - name: Create
-       fwebos_waf_ip_members:
-        action: add
-        table_name: test4
-        member_type: trust-ip
-        ip: 5.5.5.5
-        vdom: root
+    - name: Create
+      fwebos_waf_ip_members:
+       action: add
+       name: test4
+       member_type: trust-ip
+       ip: 5.5.5.6
+       vdom: root
+
+    - name: get
+      fwebos_waf_ip_members:
+       action: get
+       name: test4
+
+    - name: edit
+      fwebos_waf_ip_members:
+       action: edit
+       name: test4
+       id: 1
+       ip: 6.10.25.6
+
+    - name: delete
+      fwebos_waf_ip_members:
+       action: delete
+       name: test4
+       id: 1
  
 
 Return Values
