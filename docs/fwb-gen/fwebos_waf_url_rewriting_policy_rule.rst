@@ -86,27 +86,27 @@ Examples
     gather_facts: false
     tasks:
       - name: add a URL rewriting rule in a policy
-        fwebos_waf_url_rewriting_policy_rule_rule:
+        fwebos_waf_url_rewriting_policy_rule:
         action: add 
         name: rp1
         url_rewrite_rule_name: test_rule1
         continue_execution: enable
 
       - name: get a URL rewriting rule in a policy
-        fwebos_waf_url_rewriting_policy_rule_rule:
+        fwebos_waf_url_rewriting_policy_rule:
         action: get 
         name: rp1
         id: 1
 
       - name: edit a URL rewriting rule in a policy
-        fwebos_waf_url_rewriting_policy_rule_rule:
+        fwebos_waf_url_rewriting_policy_rule:
         action: edit 
         name: rp1
         id: 1
         continue_execution: disable
 
       - name: delete a URL rewriting policy
-        fwebos_waf_url_rewriting_policy_rule_rule:
+        fwebos_waf_url_rewriting_policy_rule:
         action: delete 
         name: rp1
         id: 1
